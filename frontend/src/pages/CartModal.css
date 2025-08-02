@@ -1,0 +1,124 @@
+/* CartModal.css */
+.cart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  animation: slideIn 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: crimson;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close:hover {
+  background: darkred;
+  transform: rotate(90deg);
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-4px);
+  background: #f0e7ff;
+}
+
+.cart-item img {
+  border-radius: 12px;
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cart-item img:hover {
+  transform: scale(1.05);
+}
+
+.cart-item div {
+  flex: 1;
+}
+
+.cart-item h4 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.cart-item p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Scrollbar styling */
+.cart-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cart-modal::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 480px) {
+  .cart-modal {
+    padding: 16px;
+    width: 95%;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cart-item img {
+    width: 80px;
+  }
+}

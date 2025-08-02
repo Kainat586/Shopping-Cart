@@ -1,0 +1,32 @@
+.app-container {
+  display: flex;
+}
+
+.home-container {
+  flex: 2;
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.item-detail {
+  flex: 1;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+}
